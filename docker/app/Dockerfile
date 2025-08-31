@@ -13,7 +13,8 @@ RUN apk add --no-cache \
     zip \
     unzip \
     curl \
-    npm
+    npm \
+    nodejs
 
 # PHP extensions
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
@@ -28,3 +29,6 @@ COPY . .
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
+
+# Install JS dependencies
+RUN npm install
