@@ -11,9 +11,11 @@
 @stop
 
 @section('css')
+    @livewireStyles
     @stack('css')
 @stop
 
 @section('js')
+    @livewireScripts
     @stack('js')
 @stop
