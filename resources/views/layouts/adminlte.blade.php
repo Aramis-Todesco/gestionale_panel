@@ -1,17 +1,19 @@
-@extends('adminlte::master')
+@extends('adminlte::page')
 
-@section('adminlte_css')
+@section('title', $title ?? 'Dashboard')
+
+@section('content_header')
+    <h1>{{ $header ?? 'Dashboard' }}</h1>
+@stop
+
+@section('content')
+    @yield('content')
+@stop
+
+@section('css')
     @stack('css')
 @stop
 
-@section('body_class', 'hold-transition login-page')
-
-@section('body')
-    <div class="d-flex justify-content-center align-items-center vh-100">
-        @yield('content')
-    </div>
-@stop
-
-@section('adminlte_js')
+@section('js')
     @stack('js')
 @stop
